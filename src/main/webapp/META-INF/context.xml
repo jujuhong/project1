@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 태그로 작성된 파일 (정보를 저장)-->
+<!--  디비연결에 필요한 정보를 저장-->
+
+<Context>
+  <Resource 
+     name ="jdbc/mvc6"
+     auth ="Container"
+     type ="javax.sql.DataSource"
+     driverClassName ="com.mysql.cj.jdbc.Driver"
+     username ="root"
+     password ="1234"
+     url ="jdbc:mysql://localhost:3306/jspdb"
+     maxWait ="5000"
+      
+  />
+
+</Context>
+

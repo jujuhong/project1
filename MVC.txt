@@ -1,0 +1,86 @@
+MVC.txt  (p556~)
+" 
+
+* model1개발 --> JSP페이지에서 모든처리 수행(JSP,js,css,비지니스로직(DV)
+
+* MVC패턴을 사용해서 model2방식으로 개발
+
+M model: POJO(plain old Java Object) 자형태의 파일 - 데이터베이스 연결
+v view : jsp형태의 파일 (화면에 출력)
+C controller : Servlet 형태의 파일, model-view 연결
+
+
+ ** MVC(model 2 )개발은 항상 가상주소 사용
+ ** 주소줄에 .jsp 페이지가 있는 경우 잘못된 구현
+    --> jsp 페이지 실행 x (예외 index.jsp 만 실행가능)
+                   
+                   
+        String requestURI = request.getRequestURI();
+	    System.out.println(requestURI);
+	    -->/JspMVC6/*.me   프로토콜 IP주소 포트번호가 없는 페이지주소
+	    
+	    String requestURL = request.getRequestURL()+"";
+	    System.out.println(requestURL);	    
+        -->http://localhost:8088/JspMVC6/*.me
+        
+        * MVC 주소 -> 상대주소 
+        
+        => ./BoardList.bo   (가상주소)
+        =>  /MVC/BoardList.bo
+        => /프로젝트명/가상주소
+        
+        
+        (실제주소)
+        => ./board/boardList.jsp
+        => ./img/board/board.jsp
+        => ./css/boardCss.css
+        => /webapp폴더/css/boardCss.css
+        
+        
+        git : 버전관리 시스템 (로컬 즉 내컴터 안에서만 저장)
+        
+        
+        github : 원격으로 버전관리가 가능한것 원격저장소 클라우드의 개념 
+        
+        * git6 로컬저장소 폴더 생성
+          => Local repository 생성 (git 파일을 관리한다)
+          
+          - untracked : 레포(repository)를 설정하고 나면 대부분의 모든파일이 가지는 상태
+                        git이 해당파일의 상태를 관리하지 않는다  
+          - tracked   : git이 해당파일을 관리하는 상태 파일에 관심생김 --> ex) 파일 변경, 수정 
+ -------------------------------------------------------------------------------------------------------------------------         
+         (반드시 tracked 상태)
+          - unstaged  : 상태를 저장하지 않은 상태 
+          - staged    : 정보를 저장한 상태
+          
+          [git init] : 로컬저장소 생성
+          [git status] : 상태정보 확인
+          [git add 파일명] : 특정파일추가 (관리상태 변경)
+         
+        *  $ git commit -m "세이브 1번 파일"
+        
+        계정정보 설정하기
+        [git config --global user.email "이메일주소(깃허브계정)"]
+        [git config --global user.name "사용자명(깃허브계정)"]
+        
+        
+        [git log] : 파일 확인
+         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
